@@ -1,0 +1,21 @@
+config:
+  linkedin_email: "your_email"
+  linkedin_password: "your_password"
+
+  job_search:
+    num_pages: 2
+    locations: 
+      - "Spain"
+      - "Portugal"
+      - "France"
+      - "Luxembourg"
+      - "Switzerland"
+      - "Italy"
+      - "Netherlands"
+      - "Belgium"
+      - "Germany"
+      - "Czech Republic"
+      - "Denmark"
+      - "Andorra"
+    keyword: "Data Scientist"
+
