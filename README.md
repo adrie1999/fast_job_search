@@ -22,8 +22,8 @@ fast_job_search/
 │️   ├── streamlit_data/         # Processed data for Streamlit visualization
 │️── src/
 │️   ├── utils                   # utils methods for main script
-│️   ├── WebScrapping/           # LinkedIn web scraper
-│️   ├── vector_search/          # NLP-based job matching
+│️   ├── Web_scrapping/           # LinkedIn web scraper
+│️   ├── job_match/          # NLP-based job matching
 │️   ├── streamlit_dashboard/    # Streamlit app for job exploration
 │️── .gitignore                  # Files and folders ignored by Git
 │️── requirements.txt            # Python dependencies
