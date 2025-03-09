@@ -4,7 +4,7 @@ Fast Job Search is a job-matching system that scrapes job postings from LinkedIn
 
 ### 📊 Dashboard Demo  
 
-My dashboard demo is available [here](https://adrie1999-fast-job-search-srcstreamlit-dashboardapp-x6lxah.streamlit.app/).  
+My streamlit dashboard demo is available [here](https://adrie1999-fast-job-search-srcstreamlit-dashboardapp-x6lxah.streamlit.app/).  
 
 ### 🚀 Features
 
@@ -80,6 +80,8 @@ Run the Streamlit Dashboard
 streamlit run src/streamlit_dashboard/app.py -- --data Data/streamlit_data/data_streamlit.parquet
 ```
 
+### ⚠️ Warning
+Do not use this code to spam LinkedIn with a lot of requests in a short period. Your account could be banned.
 
 ### 👤 Author
 
