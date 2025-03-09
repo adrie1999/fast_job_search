@@ -2,6 +2,10 @@
 
 Fast Job Search is a job-matching system that scrapes job postings from LinkedIn, applies NLP-based similarity matching with user CVs, and presents ranked job opportunities in a Streamlit dashboard.
 
+### 📊 Dashboard Demo  
+
+My dashboard demo is available [here](https://adrie1999-fast-job-search-srcstreamlit-dashboardapp-x6lxah.streamlit.app/).  
+
 ### 🚀 Features
 
 Web Scraping: Extract job postings from LinkedIn using Selenium.
