@@ -77,7 +77,7 @@ python src/main.py
 Run the Streamlit Dashboard
 
 ```
-streamlit run src/streamlit_dashboard/app.py -- --data Data/streamlit_data/data_streamlit.parquet
+streamlit run src/streamlit_dashboard/app.py
 ```
 
 ### ⚠️ Warning
