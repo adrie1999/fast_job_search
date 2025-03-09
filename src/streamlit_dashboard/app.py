@@ -1,16 +1,8 @@
 import streamlit as st
 import argparse
 
-def get_args():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--data', type=str, required=True, help='Path to your data file')
-    return parser.parse_args()
 
 def main():
-    args = get_args()
-    if 'data_path' not in st.session_state:
-        st.session_state.data_path = args.data  
-
     st.title("🔍 Job Match Exploration Dashboard")
 
     st.write("### Introduction")

@@ -3,8 +3,8 @@ import pandas as pd
 from utils.data_loader import get_data
 from utils.utils_filter import apply_normalization,create_filters,sidebar_filters,filter_data
 
-
-data = get_data(st.session_state.data_path).copy()
+data_path='Data/streamlit_data/data_streamlit.parquet'
+data = get_data(data_path).copy()
 
 similarity_columns = [
     "overall_similarity", "skills_similarity", "title_similarity", 
