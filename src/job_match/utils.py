@@ -2,6 +2,7 @@ from langdetect import detect
 import pycountry
 from typing import Optional
 
+
 def get_language_name(text: str) -> Optional[str]:
     """
     Detects the language of the provided text and returns the corresponding language name.
@@ -21,4 +22,3 @@ def get_language_name(text: str) -> Optional[str]:
     except Exception as e:
         print(f"Error detecting language: {e}")
         return None
-    

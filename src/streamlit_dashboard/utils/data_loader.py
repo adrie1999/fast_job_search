@@ -2,7 +2,10 @@ import pandas as pd
 import numpy as np
 import streamlit as st
 
-def add_noise_to_coordinates(data: pd.DataFrame, noise_range: float = 0.0005) -> pd.DataFrame:
+
+def add_noise_to_coordinates(
+    data: pd.DataFrame, noise_range: float = 0.0005
+) -> pd.DataFrame:
     """
     Add random noise to latitude and longitude coordinates in the dataset.
 
@@ -17,6 +20,7 @@ def add_noise_to_coordinates(data: pd.DataFrame, noise_range: float = 0.0005) ->
     data["longitude"] += np.random.uniform(-noise_range, noise_range, size=len(data))
     return data
 
+
 @st.cache_data
 def load_data(data_path) -> pd.DataFrame:
     """
@@ -28,8 +32,9 @@ def load_data(data_path) -> pd.DataFrame:
     """
     data = pd.read_parquet(data_path)
     data_with_noise = add_noise_to_coordinates(data)
-    
+
     return data_with_noise
+
 
 def get_data(data_path) -> pd.DataFrame:
     """

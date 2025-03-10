@@ -6,7 +6,8 @@ def main():
     st.title("🔍 Job Match Exploration Dashboard")
 
     st.write("### Introduction")
-    st.write("""
+    st.write(
+        """
         This dashboard allows you to explore job matches based on various similarity metrics such as:
         - **Overall match:** cosine similarity between job descriptions and your CV
         - **Skills match:** comparison of job-required skills with your listed skills
@@ -15,10 +16,12 @@ def main():
         - **Experience match:** job descriptions compared to your preferred experience
 
         You can filter and rank job postings to better suit your profile.
-    """)
+    """
+    )
 
     st.write("### How It Works")
-    st.write("""
+    st.write(
+        """
     1. **Data Collection**: Job postings are scraped from LinkedIn using a configuration file that specifies filters (e.g., keywords, locations, job types).
     2. **Vectorization & Similarity Matching**: We compute embeddings (with distiluse-base-multilingual-cased-v1) for job descriptions and your CV, then apply cosine similarity to rank job postings.
     3. **Preference-based Ranking**: Jobs are ranked based on a combination of:
@@ -31,7 +34,8 @@ def main():
     4. **Interactive Filtering**: Use the dashboard to refine search results and focus on the best matches.
     5. **Jobs match page**: See the best ranked job offer in a table view with many filters available.
     6. **Jobs locations page**: Explore job locations on a map with multiple filtering options.
-    """)
+    """
+    )
 
     st.write("### Example of text used for each Similarity metrics")
 
@@ -48,7 +52,7 @@ def main():
         "title": "Data Scientist, Machine Learning Engineer",
         "location": "France, Germany, Switzerland, Italy, Belgium, Luxembourg",
         "language": "French, Italian, English",
-        "experience": "2-3 years experience, Junior, Graduated, Data Scientist"
+        "experience": "2-3 years experience, Junior, Graduated, Data Scientist",
     }
 
     st.write("### CV Text Example")
@@ -56,7 +60,6 @@ def main():
 
     st.write("### Job Preferences Example")
     st.write(preferences_example)
-
 
 
 if __name__ == "__main__":
