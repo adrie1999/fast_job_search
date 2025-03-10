@@ -83,7 +83,7 @@ class LinkedingJobScrapper:
             print("button sign in clicked successfully.")
         except Exception as e:
             print(f"Error clicking second button: {e}")
-            return
+            
 
         try:
             email_field = WebDriverWait(self.driver, self.timeout).until(
@@ -101,7 +101,7 @@ class LinkedingJobScrapper:
             print("Credentials entered successfully.")
         except Exception as e:
             print(f"Error entering credentials: {e}")
-            return
+            
 
         try:
             sign_in_button = WebDriverWait(self.driver, self.timeout).until(
@@ -116,7 +116,7 @@ class LinkedingJobScrapper:
             print("Login successful.")
         except Exception as e:
             print(f"Error clicking login button: {e}")
-            return
+            
 
     def generate_linkedin_job_url(
         self, job_title: str, location: str, time_range: str = "r86400"

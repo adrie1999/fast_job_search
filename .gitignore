@@ -174,3 +174,4 @@ cython_debug/
 /Data/save_jobs_data/
 google-chrome-stable_current_amd64.deb
 /src/web_scrapping/config_scrapping.yaml
+/src/main_local.py
