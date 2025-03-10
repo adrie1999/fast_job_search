@@ -4,14 +4,14 @@ import streamlit as st
 
 
 def add_noise_to_coordinates(
-    data: pd.DataFrame, noise_range: float = 0.0005
+    data: pd.DataFrame, noise_range: float = 0.005
 ) -> pd.DataFrame:
     """
     Add random noise to latitude and longitude coordinates in the dataset.
 
     Args:
         data (pd.DataFrame): The input DataFrame containing 'latitude' and 'longitude' columns.
-        noise_range (float, optional): The range of uniform noise to add. Default is 0.0005.
+        noise_range (float, optional): The range of uniform noise to add. Default is 0.005.
 
     Returns:
         pd.DataFrame: The DataFrame with modified latitude and longitude values.
