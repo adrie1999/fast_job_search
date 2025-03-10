@@ -31,7 +31,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           git config --global user.name "adrie1999"
-          git config --global user.email "adrie1999@users.noreply.github.com"
+          git config --global user.email "adrienmorlot@hotmail.fr"
           git add .
           if git diff --cached --quiet; then
             echo "No changes to commit"
