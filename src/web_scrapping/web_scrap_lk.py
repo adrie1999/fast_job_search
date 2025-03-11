@@ -82,7 +82,7 @@ class LinkedingJobScrapper:
             self.driver.execute_script("arguments[0].click();", button)
             print("button sign in clicked successfully.")
         except Exception as e:
-            print(f"Error clicking second button: {e}")
+            print(f"Error clicking second button")
 
         try:
             email_field = WebDriverWait(self.driver, self.timeout).until(
@@ -99,7 +99,7 @@ class LinkedingJobScrapper:
             password_field.send_keys(linkedin_password)
             print("Credentials entered successfully.")
         except Exception as e:
-            print(f"Error entering credentials: {e}")
+            print(f"Error entering credentials")
 
         try:
             sign_in_button = WebDriverWait(self.driver, self.timeout).until(
@@ -113,7 +113,7 @@ class LinkedingJobScrapper:
             self.driver.execute_script("arguments[0].click();", sign_in_button)
             print("Login successful.")
         except Exception as e:
-            print(f"Error clicking login button: {e}")
+            print(f"Error clicking login button")
 
     def generate_linkedin_job_url(
         self, job_title: str, location: str, time_range: str = "r86400"
@@ -140,7 +140,7 @@ class LinkedingJobScrapper:
         Scrolls through job card elements inside the job search list.
 
         Args:
-        - num_scrolls (int): Number of scroll iterations (default is 1).
+        - num_scrolls (int): Number of scroll iterations (default is 5).
         """
         for i in range(num_scrolls):
             try:
@@ -158,8 +158,9 @@ class LinkedingJobScrapper:
                         "arguments[0].scrollIntoView();", job_cards[index]
                     )
             except Exception as e:
-                print(f"Scrolling error: {e}")
+                print(f"Scrolling error")
                 break
+        time.sleep(2)
         print("Scrolling completed.")
 
     def click_next_page(self) -> None:
@@ -192,7 +193,7 @@ class LinkedingJobScrapper:
             )
 
         except Exception as e:
-            print(f"Error clicking next page: {e}")
+            print(f"Error clicking next page")
 
     def get_max_page_number(self) -> int:
         """
@@ -225,7 +226,7 @@ class LinkedingJobScrapper:
             return max_page
 
         except Exception as e:
-            print(f"Error retrieving max page number: {e}")
+            print(f"Max page number is 1")
             return 1
 
     def scrape_all_job_listings_with_selenium(self) -> List[Dict[str, Optional[str]]]:
@@ -238,9 +239,9 @@ class LinkedingJobScrapper:
         job_listings = []
 
         try:
-            job_cards = self.driver.find_element(
-                By.CLASS_NAME, "hGByQEOVDCYtBdgZhMutwkWZGDYyuVk"
-            ).find_elements(By.CLASS_NAME, "job-card-container")
+            job_cards = self.driver.find_elements(
+            By.XPATH, '//div[contains(@class, "job-card-container--clickable") and not(ancestor::div[contains(@class, "continuous-discovery-modules")])]'
+            )
             for i, job_card in enumerate(job_cards):
                 if i > 0:
                     ActionChains(self.driver).move_to_element(job_card).perform()
@@ -322,7 +323,7 @@ class LinkedingJobScrapper:
                 )
             max_page = self.get_max_page_number()
             for i in range(min(config["job_search"]["num_pages"], max_page)):
-                self.scroll_job_cards(num_scrolls=10)
+                self.scroll_job_cards(num_scrolls=15)
                 job_listings = self.scrape_all_job_listings_with_selenium()
                 if i < min(config["job_search"]["num_pages"], max_page) - 1:
                     self.click_next_page()
