@@ -240,7 +240,8 @@ class LinkedingJobScrapper:
 
         try:
             job_cards = self.driver.find_elements(
-            By.XPATH, '//div[contains(@class, "job-card-container--clickable") and not(ancestor::div[contains(@class, "continuous-discovery-modules")])]'
+                By.XPATH,
+                '//div[contains(@class, "job-card-container--clickable") and not(ancestor::div[contains(@class, "continuous-discovery-modules")])]',
             )
             for i, job_card in enumerate(job_cards):
                 if i > 0:
