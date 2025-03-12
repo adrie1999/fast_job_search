@@ -18,7 +18,7 @@ Streamlit Dashboard: Visualize job matches with interactive filtering, including
 
 Job Data Storage: Save scrapped job data as Parquet files and manage them efficiently.
 
-### 💂️ Project Structure
+### 📁 Project Structure
 ```
 fast_job_search/
 │️── Data/
