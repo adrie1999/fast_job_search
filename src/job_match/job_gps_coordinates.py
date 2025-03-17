@@ -52,7 +52,7 @@ class GpsFinder:
         geolocator = Nominatim(user_agent="geo_locator")
 
         try:
-            location_data = geolocator.geocode(location, timeout=10)
+            location_data = geolocator.geocode(location, timeout=30)
             if location_data:
                 return location_data.latitude, location_data.longitude
         except GeocoderTimedOut:
